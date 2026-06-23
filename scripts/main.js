@@ -57,6 +57,7 @@ function renderProjects(){
   grid.innerHTML = (site.projects || []).map(project => `
     <button class="project-card reveal" data-project="${project.slug}" aria-label="Otwórz realizację ${project.title}">
       <img src="${project.cover}" alt="${project.title}" loading="lazy">
+      <span class="project-card__open">Otwórz galerię</span>
       <span class="project-card__content">
         <h3>${project.title}</h3>
         <p>${project.area} · ${project.location} · ${project.year}</p>
@@ -72,16 +73,80 @@ function renderProjects(){
 function renderServices(){
   const wrap = $('#servicesGrid');
   if(!wrap) return;
-  wrap.innerHTML = (site.services || []).map(item => `
-    <article class="service-row reveal">
+  const previewImages = [
+    'assets/about/o-pracowni.jpg',
+    'assets/projects/ksiecia-witolda/02.jpg',
+    'assets/hero/services.jpg',
+    'assets/projects/jodlowa-1/cover.jpg',
+    'assets/projects/apartament-kurkowa/cover.jpg'
+  ];
+  wrap.innerHTML = (site.services || []).map((item, index) => `
+    <article class="service-row reveal" tabindex="0" aria-expanded="false">
       <div class="service-row__mark"><span>Usługa</span><b>${item[0]}</b></div>
       <div>
         <h3>${item[1]}</h3>
         <p>${item[2]}</p>
       </div>
+      <aside class="service-row__preview" aria-hidden="true">
+        <button class="service-row__previewClose" type="button" aria-label="Zamknij podgląd usługi">×</button>
+        <img src="${previewImages[index % previewImages.length]}" alt="" loading="lazy">
+        <div class="service-row__previewCopy">
+          <span>Usługa ${item[0]}</span>
+          <strong>${item[1]}</strong>
+          <p>${item[2]}</p>
+        </div>
+      </aside>
     </article>
   `).join('');
-  $$('.service-row', wrap).forEach(row => observer.observe(row));
+  const rows = $$('.service-row', wrap);
+  const closePreviews = () => {
+    rows.forEach(row => {
+      row.classList.remove('is-preview-open');
+      row.setAttribute('aria-expanded', 'false');
+      row.querySelector('.service-row__preview')?.setAttribute('aria-hidden', 'true');
+    });
+    document.body.classList.remove('service-preview-open');
+  };
+  const openPreview = row => {
+    if(!window.matchMedia('(max-width:1180px)').matches) return;
+    const willOpen = !row.classList.contains('is-preview-open');
+    closePreviews();
+    if(!willOpen) return;
+    row.classList.add('is-preview-open');
+    row.setAttribute('aria-expanded', 'true');
+    const preview = row.querySelector('.service-row__preview');
+    preview?.setAttribute('aria-hidden', 'false');
+    if(preview){
+      const edge = 10;
+      const previewHeight = Math.min(row.offsetHeight * 2 - edge * 2, wrap.clientHeight - edge * 2);
+      const desiredTop = row.offsetTop + (row.offsetHeight - previewHeight) / 2;
+      const maxTop = Math.max(edge, wrap.clientHeight - previewHeight - edge);
+      const topInList = Math.max(edge, Math.min(maxTop, desiredTop));
+      preview.style.setProperty('--service-preview-height', `${previewHeight}px`);
+      preview.style.setProperty('--service-preview-top', `${topInList - row.offsetTop}px`);
+    }
+    document.body.classList.add('service-preview-open');
+  };
+  rows.forEach(row => {
+    observer.observe(row);
+    row.addEventListener('click', event => {
+      if(event.target.closest('.service-row__previewClose')) return;
+      openPreview(row);
+    });
+    row.addEventListener('keydown', event => {
+      if(event.key === 'Enter' || event.key === ' '){
+        event.preventDefault();
+        openPreview(row);
+      }
+    });
+    row.querySelector('.service-row__previewClose')?.addEventListener('click', event => {
+      event.stopPropagation();
+      closePreviews();
+    });
+  });
+  document.addEventListener('click', event => {
+    if(document.body.classList.contains('service-preview-open') && !event.target.closest('.service-row')) closePreviews();
+  });
 }
 
 function renderAbout(){

@@ -9,14 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/main.css?v=32" />
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <aside class="rail" aria-label="Nawigacja boczna">
     <a class="brand" href="#start" aria-label="LN strona główna">
-      <img src="assets/brand/ln-logo-white.png" alt="LN architektura i wnętrza">
+      <img src="assets/NOWE ASSETY/czarne.png" alt="LN Architektura i Wnętrza">
     </a>
     <button class="rail__menu" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
       <span></span><span></span>
@@ -41,15 +41,16 @@
   </aside>
 
   <header class="topbar">
-    <a class="topbar__logo" href="#start" aria-label="LN strona główna"><img src="assets/brand/ln-logo-white.png" alt="LN"></a>
+    <a class="topbar__logo" href="#start" aria-label="LN strona główna"><img src="assets/NOWE ASSETY/czarne.png" alt="LN Architektura i Wnętrza"></a>
     <nav class="topbar__nav" aria-label="Nawigacja główna">
-      <a href="#realizacje">Realizacje</a>
+      <span class="topbar__separator topbar__separator--mobile-start" aria-hidden="true"></span>
+      <a href="#realizacje" data-mobile-label="01">Realizacje</a>
       <span class="topbar__separator" aria-hidden="true"></span>
-      <a href="#oferta">Oferta</a>
+      <a href="#oferta" data-mobile-label="02">Oferta</a>
       <span class="topbar__separator" aria-hidden="true"></span>
-      <a href="#onas">O nas</a>
+      <a href="#onas" data-mobile-label="03">O nas</a>
       <span class="topbar__separator" aria-hidden="true"></span>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" data-mobile-label="04">Kontakt</a>
       <span class="topbar__separator" aria-hidden="true"></span>
       <span class="topbar__socialgroup" aria-label="Media społecznościowe">
         <a class="topbar__social topbar__social--ig" href="https://www.instagram.com/lnwnetrza/" target="_blank" rel="noreferrer" aria-label="Instagram LN Wnętrza">
@@ -84,7 +85,8 @@
               <a class="button button--primary" href="#kontakt">Umów konsultację</a>
               <a class="button button--ghost" href="#realizacje">Zobacz realizacje</a>
             </div>
-            <a class="hero__worklink" href="#oferta" aria-label="Przejdź do sekcji oferta">
+            <a class="hero__worklink" href="#realizacje" aria-label="Przejdź do sekcji realizacje">
+              <span class="hero__down" aria-hidden="true"></span>
               <span class="hero__worktext">Zobacz jak pracujemy</span>
               <span class="hero__down" aria-hidden="true"></span>
             </a>
@@ -146,19 +148,19 @@
       </div>
       <div class="team__bios reveal">
         <article class="team-bio">
-          <p class="eyebrow">Architekt</p>
+          <p class="eyebrow">Architektka</p>
           <h3>Paula</h3>
           <p>Projektuje wnętrza, łącząc estetykę, funkcjonalność i indywidualne podejście do klienta. Dba o każdy etap procesu projektowego i realizacji.</p>
         </article>
         <article class="team-bio">
-          <p class="eyebrow">Architekt</p>
+          <p class="eyebrow">Architektka</p>
           <h3>Ewelina</h3>
           <p>Specjalizuje się w projektach mieszkań i domów, dbając o spójność koncepcji oraz dopracowanie detali. Czuwa nad sprawnym przebiegiem inwestycji i współpracą z wykonawcami.</p>
         </article>
       </div>
       <div class="team__portraits reveal" aria-label="Portrety architektek">
-        <img src="assets/about/paula.jpg" alt="Paula, architekt LN Wnętrza">
-        <img src="assets/about/ewelina.jpg" alt="Ewelina, architekt LN Wnętrza">
+        <div class="team__portrait"><img src="assets/about/paula.jpg" alt="Paula, architektka LN Wnętrza"></div>
+        <div class="team__portrait"><img src="assets/about/ewelina.jpg" alt="Ewelina, architektka LN Wnętrza"></div>
       </div>
     </section>
 
@@ -209,6 +211,6 @@
   </div>
 
   <script src="scripts/data.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js?v=7"></script>
 </body>
 </html>
