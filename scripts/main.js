@@ -60,7 +60,7 @@ function renderProjects(){
       <span class="project-card__open">Otwórz galerię</span>
       <span class="project-card__content">
         <h3>${project.title}</h3>
-        <p>${project.area} · ${project.location} · ${project.year}</p>
+        <p><span style="text-transform:none;">${project.area}</span> · ${project.location} · ${project.year}</p>
       </span>
     </button>
   `).join('');
@@ -74,11 +74,11 @@ function renderServices(){
   const wrap = $('#servicesGrid');
   if(!wrap) return;
   const previewImages = [
-    'assets/about/o-pracowni.jpg',
-    'assets/projects/ksiecia-witolda/02.jpg',
-    'assets/hero/services.jpg',
-    'assets/projects/jodlowa-1/cover.jpg',
-    'assets/projects/apartament-kurkowa/cover.jpg'
+    'assets/NOWE ASSETY/KONSULTACJE.jpeg',
+    'assets/NOWE ASSETY/INWENTARYZACJA k.jpeg',
+    'assets/NOWE ASSETY/PROJEKT.png',
+    'assets/NOWE ASSETY/NADZÓR.jpeg',
+    'assets/NOWE ASSETY/HOME STAGING.JPG'
   ];
   wrap.innerHTML = (site.services || []).map((item, index) => `
     <article class="service-row reveal" tabindex="0" aria-expanded="false">
@@ -118,7 +118,7 @@ function renderServices(){
     preview?.setAttribute('aria-hidden', 'false');
     if(preview){
       const edge = 10;
-      const previewHeight = Math.min(row.offsetHeight * 2 - edge * 2, wrap.clientHeight - edge * 2);
+      const previewHeight = Math.min(row.offsetHeight * 4 - edge * 2, wrap.clientHeight - edge * 2);
       const desiredTop = row.offsetTop + (row.offsetHeight - previewHeight) / 2;
       const maxTop = Math.max(edge, wrap.clientHeight - previewHeight - edge);
       const topInList = Math.max(edge, Math.min(maxTop, desiredTop));
@@ -163,7 +163,7 @@ function openProject(slug){
   currentProject = project;
   currentIndex = 0;
   $('#modalTitle').textContent = project.title;
-  $('#modalMeta').textContent = `${project.area} · ${project.location} · ${project.year}`;
+  $('#modalMeta').innerHTML = `<span style="text-transform:none;">${project.area}</span> · ${project.location} · ${project.year}`;
   $('#modalDesc').textContent = project.description || '';
   const thumbs = $('#galleryThumbs');
   thumbs.innerHTML = project.images.map((src, i) => `

@@ -10,7 +10,7 @@ window.LN_SITE = {
       "title": "Księcia Witolda",
       "location": "Wrocław",
       "year": "2024",
-      "area": "80 m²",
+      "area": "118 m²",
       "cover": "assets/projects/ksiecia-witolda/cover.jpg",
       "description": "Apartament o ciepłej, szlachetnej estetyce, zaprojektowany z dbałością o światło, materiały i detal.",
       "images": [
@@ -27,7 +27,7 @@ window.LN_SITE = {
       "title": "Apartament Bulwary",
       "location": "Wrocław",
       "year": "2020",
-      "area": "90 m²",
+      "area": "78 m²",
       "cover": "assets/projects/apartament-bulwary/cover.jpg",
       "description": "Elegancka przestrzeń mieszkalna oparta na funkcjonalnym układzie, naturalnych materiałach i spokojnej kolorystyce.",
       "images": [
@@ -41,7 +41,7 @@ window.LN_SITE = {
       "title": "Apartament Kurkowa",
       "location": "Wrocław",
       "year": "2021",
-      "area": "74 m²",
+      "area": "50 m²",
       "cover": "assets/projects/apartament-kurkowa/cover.jpg",
       "description": "Projekt mieszkania z naciskiem na ergonomię, spójność stylistyczną i dopracowaną zabudowę.",
       "images": [
@@ -58,7 +58,7 @@ window.LN_SITE = {
       "title": "Jodłowa I",
       "location": "Wrocław",
       "year": "2023",
-      "area": "150 m²",
+      "area": "52 m²",
       "cover": "assets/projects/jodlowa-1/cover.jpg",
       "description": "Wnętrze domu, w którym charakter materiałów i rozwiązania funkcjonalne tworzą spójną, codzienną przestrzeń.",
       "images": [
@@ -75,7 +75,7 @@ window.LN_SITE = {
       "title": "Jodłowa II",
       "location": "Wrocław",
       "year": "2023",
-      "area": "150 m²",
+      "area": "70 m²",
       "cover": "assets/projects/jodlowa-2/cover.jpg",
       "description": "Kompleksowy projekt domu z jasną bazą, naturalnym drewnem i starannie poprowadzonym procesem realizacji.",
       "images": [
@@ -92,7 +92,7 @@ window.LN_SITE = {
       "title": "Międzyzdroje I",
       "location": "Międzyzdroje",
       "year": "2022",
-      "area": "68 m²",
+      "area": "45 m²",
       "cover": "assets/projects/miedzyzdroje-1/cover.jpg",
       "description": "Apartament wakacyjny zaprojektowany z myślą o komforcie, trwałości i przyjemnym rytmie odpoczynku.",
       "images": [
@@ -107,7 +107,7 @@ window.LN_SITE = {
       "title": "Międzyzdroje II",
       "location": "Międzyzdroje",
       "year": "2023",
-      "area": "68 m²",
+      "area": "74 m²",
       "cover": "assets/projects/miedzyzdroje-2/cover.jpg",
       "description": "Jasne wnętrze apartamentowe łączące przytulność, funkcjonalność i spójny standard inwestycyjny.",
       "images": [
