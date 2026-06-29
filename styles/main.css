@@ -1163,7 +1163,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
 }
 @media (max-width:760px){
   .hero{padding:100px 20px 34px}
-  .hero h1{font-size:clamp(40px,12vw,58px);max-width:none}
+  .hero h1{font-size:clamp(38px,12vw,56px);max-width:none}
   .hero__lead{font-size:15px}
   .hero__actions{width:100%}
   .button{width:100%}
@@ -2962,7 +2962,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   .topbar__nav a:not(.topbar__social)::after{
     content:attr(data-mobile-label);
     color:#fff;
-    font-size:clamp(8px,1.6vw,10px);
+    font-size:clamp(6px,1.6vw,8px);
     font-weight:700;
     line-height:1;
     letter-spacing:.14em;
@@ -3052,7 +3052,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
 
   .hero h1{
     margin-top:0 !important;
-    font-size:clamp(36px,10.8vw,54px) !important;
+    font-size:clamp(34px,10.8vw,52px) !important;
     line-height:.98 !important;
   }
 
@@ -3653,7 +3653,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .hero h1{
-    font-size:clamp(34px,10.1vw,54px) !important;
+    font-size:clamp(32px,10.1vw,52px) !important;
     line-height:.97 !important;
     margin-top:4px !important;
     max-width:none !important;
@@ -3745,7 +3745,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .topbar__nav a:not(.topbar__social)::after{
-    font-size:9px !important;
+    font-size:5px !important;
     letter-spacing:.12em !important;
   }
   .topbar__nav a:not(.topbar__social){
@@ -3788,7 +3788,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .hero h1{
-    font-size:clamp(35px,8.9vw,49px) !important;
+    font-size:clamp(33px,8.9vw,47px) !important;
     line-height:.95 !important;
     margin-top:6px !important;
     max-width:460px !important;
@@ -3883,7 +3883,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .hero__worktext{
-    font-size:9px !important;
+    font-size:7px !important;
     letter-spacing:.16em !important;
     white-space:nowrap !important;
   }
@@ -3905,7 +3905,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .topbar__nav a:not(.topbar__social)::after{
-    font-size:10px !important;
+    font-size:8px !important;
   }
 
   .hero .eyebrow{
@@ -3914,7 +3914,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .hero h1{
-    font-size:clamp(54px,12.2vw,74px) !important;
+    font-size:clamp(52px,12.2vw,72px) !important;
     line-height:.92 !important;
     margin-top:10px !important;
     margin-bottom:10px !important;
@@ -3985,7 +3985,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   .press__intro p:last-child,
   .contact__links,
   .hero__worktext{
-    font-size:15px !important;
+    font-size:13px !important;
   }
 }
 
