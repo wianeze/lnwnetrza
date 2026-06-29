@@ -3914,7 +3914,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .hero h1{
-    font-size:clamp(52px,12.2vw,72px) !important;
+    font-size:clamp(48px,12.2vw,68px) !important;
     line-height:.92 !important;
     margin-top:10px !important;
     margin-bottom:10px !important;
