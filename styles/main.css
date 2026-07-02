@@ -3020,6 +3020,9 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
     background:var(--paper) !important;
     color:var(--ink) !important;
     border-top:1px solid var(--line-dark) !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:flex-start !important;
   }
 
   .team-bio:nth-child(1){
@@ -3973,6 +3976,9 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
     background:var(--paper) !important;
     color:var(--ink) !important;
     border-top:1px solid var(--line-dark) !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:flex-start !important;
   }
 
   .team-bio:nth-child(1){
