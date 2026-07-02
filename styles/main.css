@@ -4321,7 +4321,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   .studio__about h2,
   .press__intro h2,
   .contact__copy h2{
-    font-size:44px !important;
+    font-size:32px !important;
   }
 
   .summary-box p:last-child{
