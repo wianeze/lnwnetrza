@@ -3753,8 +3753,16 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .topbar__separator{
-    width:14px !important;
-    margin:0 6px !important;
+    width:10px !important;
+    margin:0 3px !important;
+    flex:0 0 10px !important;
+  }
+
+  .topbar__separator::before,
+  .topbar__separator::after{
+    width:1px !important;
+    transform:scaleX(.7);
+    transform-origin:center;
   }
 
   .topbar__socialgroup{
@@ -3921,18 +3929,18 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .hero__lead{
-    font-size:15px !important;
-    line-height:1.5 !important;
-    margin-top:14px !important;
+    font-size:13px !important;
+    line-height:1.42 !important;
+    margin-top:10px !important;
     margin-bottom:8px !important;
   }
 
   .hero__stat strong{
-    font-size:clamp(24px,7vw,32px) !important;
+    font-size:clamp(20px,5.8vw,26px) !important;
   }
 
   .hero__stat span{
-    font-size:9px !important;
+    font-size:8px !important;
   }
 
   .button{
