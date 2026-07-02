@@ -313,6 +313,10 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
     line-height:.98;
   }
 
+  .hero__title span{
+    display:block !important;
+  }
+
   .hero__lead{
     font-size:14px;
     margin-top:18px;
@@ -3727,7 +3731,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 
   .press-card--text h3{
-    font-size:16px;
+    font-size:13px;
   }
 
   .press-card--text p{
