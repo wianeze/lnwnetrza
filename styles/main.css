@@ -24,15 +24,15 @@
   --studio-photo-shift-y: var(--studio-photo-shift-y-desktop);
   --studio-photo-scale:1.12;
   --team-portrait-1-position-desktop:40% 15%;
-  --team-portrait-2-position-desktop:40% 5%;
+  --team-portrait-2-position-desktop:55% 12%;
   --team-portrait-1-position-mobile:40% 0%;
   --team-portrait-2-position-mobile:42% 0%;
   --team-portrait-1-position:var(--team-portrait-1-position-desktop);
   --team-portrait-2-position:var(--team-portrait-2-position-desktop);
   --team-portrait-1-transform-desktop:translateX(-90px);
-  --team-portrait-2-transform-desktop:translateX(-70px);
+  --team-portrait-2-transform-desktop:translateX(-82px) scale(1.28);
   --team-portrait-1-transform-mobile:translateX(-15px)scale(1.20);
-  --team-portrait-2-transform-mobile:translateX(0px) scale(1.45);
+  --team-portrait-2-transform-mobile:translateX(-82px) scale(1.28);
   --team-portrait-1-transform:var(--team-portrait-1-transform-desktop);
   --team-portrait-2-transform:var(--team-portrait-2-transform-desktop);
 }
@@ -1145,8 +1145,31 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
 .team-bio .eyebrow{color:var(--accent)}
 .team-bio h3{font-size:clamp(30px,2.8vw,48px);margin:8px 0 14px}
 .team-bio p:last-child{font-size:14px;line-height:1.58;color:#655a52}
-.team__portraits{display:grid;grid-template-rows:1fr 1fr;background:#111}
+.team__portraits{display:grid;grid-template-rows:1fr 1fr .9fr;background:#111}
 .team__portraits img{width:100%;height:100%;object-fit:cover}
+.team__visual{display:none}
+
+@media (min-width:1181px){
+  .team__visual{
+    display:block;
+    overflow:hidden;
+    background:#111;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+
+  .team__visual img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+}
+
+@media (min-width:1600px){
+  .team{
+    width:calc(1600px - var(--rail));
+  }
+}
 
 .contact__map{padding:14px;background:#2b0d12;border-radius:20px}
 .contact__map::before{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),inset 0 0 0 3px rgba(0,0,0,.22);border-radius:inherit;pointer-events:none;z-index:5}
@@ -1480,6 +1503,8 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   }
 }
 
+/* Ewelina: niezależny, końcowy kadr dla każdego progu responsywnego. */
+/* Portret Eweliny: osobny kadr dla każdego progu responsywnego. */
 @media (min-width:1181px){
   .hero .eyebrow{
     font-size:12px !important;
@@ -2091,6 +2116,39 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.045em;li
   object-fit: cover !important;
   transform: translateY(var(--studio-photo-shift-y)) scale(var(--studio-photo-scale)) !important;
   transform-origin: center top !important;
+}
+
+/* Desktop: obraz sekcji 03 zawsze wypełnia całą wysokość siatki.
+   Pozycjonowanie absolutne omija niestabilne `height: 100%` elementu grid. */
+@media (min-width:1181px) {
+  .studio {
+    align-items:stretch;
+    isolation:isolate;
+  }
+
+  .studio::after {
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    width:42%;
+    z-index:0;
+    pointer-events:none;
+    background:
+      linear-gradient(90deg,#080a0a 0%,rgba(8,10,10,.86) 14%,rgba(8,10,10,.28) 46%,rgba(8,10,10,0) 100%),
+      url('../assets/NOWE ASSETY/IMG_9306.webp') center / cover no-repeat;
+    filter:grayscale(1) contrast(1.04);
+  }
+
+  .studio__about {
+    position:relative;
+    z-index:1;
+  }
+
+  .studio__photo {
+    display:none !important;
+  }
 }
 
 /* Sekcja O nas */

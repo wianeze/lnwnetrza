@@ -1,0 +1,25 @@
+/* Końcowe kadrowanie portretu Eweliny dla trzech układów strony. */
+
+@media (min-width:1181px) {
+  .team__portrait:nth-child(2) > img {
+    object-position: 55% 10% !important;
+    transform: translate(-100px, -50px) scale(1.75) !important;
+    transform-origin: center top !important;
+  }
+}
+
+@media (min-width:761px) and (max-width:1180px) {
+  .team__portrait:nth-child(2) > img {
+    object-position: 58% 8% !important;
+    transform: translate(-20px, -30px) scale(1.82) !important;
+    transform-origin: center top !important;
+  }
+}
+
+@media (max-width:760px) {
+  .team__portrait:nth-child(2) > img {
+    object-position: 56% 6% !important;
+    transform: translate(-20px, -35px) scale(1.92) !important;
+    transform-origin: center top !important;
+  }
+}
