@@ -16,6 +16,7 @@ function setNav(open){
   document.body.classList.toggle('nav-open', open);
   navToggle?.setAttribute('aria-expanded', String(open));
   navToggleMobile?.setAttribute('aria-expanded', String(open));
+  navToggleMobile?.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
 }
 function toggleNav(){ setNav(!document.body.classList.contains('nav-open')); }
 navToggle?.addEventListener('click', toggleNav);
@@ -24,6 +25,10 @@ $$('a[href^="#"]').forEach(link => link.addEventListener('click', () => setNav(f
 
 document.addEventListener('click', e => {
   if(document.body.classList.contains('nav-open') && !e.target.closest('.rail') && !e.target.closest('.topbar__menu')) setNav(false);
+});
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') setNav(false);
 });
 
 const observer = new IntersectionObserver(entries => {
@@ -77,7 +82,7 @@ function renderServices(){
     'assets/NOWE ASSETY/KONSULTACJE.webp',
     'assets/NOWE ASSETY/INWENTARYZACJA k.webp',
     'assets/NOWE ASSETY/PROJEKT.webp',
-    'assets/NOWE ASSETY/NADZÓR.webp',
+    'assets/NOWE ASSETY/nadzor.webp',
     'assets/NOWE ASSETY/HOME STAGING.webp'
   ];
   wrap.innerHTML = (site.services || []).map((item, index) => `
@@ -235,19 +240,26 @@ document.addEventListener('keydown', e => {
   if($('#projectModal')?.classList.contains('is-open') && e.key === 'ArrowLeft') showImage(currentIndex - 1);
 });
 
-$('#contactForm')?.addEventListener('submit', e => {
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(e.currentTarget).entries());
-  const body = Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n');
-  const mail = site.contactEmail || 'kontakt@lnwnetrza.pl';
-  const subject = encodeURIComponent('Zapytanie o projekt wnętrza');
-  window.location.href = `mailto:${mail}?subject=${subject}&body=${encodeURIComponent(body)}`;
-  $('#formNote').textContent = 'Otwieram wiadomość e-mail. Formularz statyczny można później podłączyć do hostingu lub CRM.';
-});
-
 renderProjects();
 renderServices();
 renderAbout();
+
+const formNote = $('#formNote');
+const formStatus = new URLSearchParams(window.location.search).get('form');
+
+if (formNote && formStatus) {
+  const formMessages = {
+    success: 'Dziękujemy. Wiadomość została wysłana.',
+    error: 'Uzupełnij wymagane pola i spróbuj ponownie.',
+    fail: 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz bezpośrednio na adres e-mail.'
+  };
+
+  const message = formMessages[formStatus];
+  if (message) {
+    formNote.textContent = message;
+    formNote.classList.add(formStatus === 'success' ? 'form-note--success' : 'form-note--error');
+  }
+}
 
 // Karuzela realizacji na stronie głównej. Galeria po kliknięciu pozostaje bez zmian.
 const projectsGrid = document.querySelector('#projectsGrid');
