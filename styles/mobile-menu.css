@@ -59,7 +59,7 @@
     color: #fff !important;
     font-family: 'Manrope', var(--font-sans) !important;
     font-size: clamp(14px, 3.9vw, 19px) !important;
-    font-weight: 600 !important;
+    font-weight: 200 !important;
     line-height: 1 !important;
     letter-spacing: .02em !important;
     text-align: center !important;
@@ -210,7 +210,7 @@
     width: 100% !important;
     height: 100% !important;
     margin: 0 !important;
-    transform: translateY(20px) !important;
+    transform: translateY(10px) !important;
   }
 
   .rail__nav a {
