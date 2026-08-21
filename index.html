@@ -8,9 +8,22 @@
   <meta name="theme-color" content="#090b0b" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=157" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css?v=160" />
   <link rel="stylesheet" href="styles/portrait-crops.css" />
+  <link rel="stylesheet" href="styles/mobile-menu.css?v=15" />
+  <link rel="stylesheet" href="styles/analytics.css?v=2" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('set', 'ads_data_redaction', true);
+  </script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -43,7 +56,10 @@
   </aside>
 
   <header class="topbar">
-    <a class="topbar__logo" href="#start" aria-label="LN strona główna"><img src="assets/NOWE ASSETY/czarne.webp" alt="LN Architektura i Wnętrza" width="1254" height="1254"></a>
+    <a class="topbar__logo" href="#start" aria-label="LN strona główna">
+      <img src="assets/NOWE ASSETY/transparent-logo.png" alt="LN Architektura i Wnętrza" width="1254" height="1254">
+    </a>
+    <span class="topbar__wordmark" aria-hidden="true">LN <small>architektura &amp; wnętrza</small></span>
     <nav class="topbar__nav" aria-label="Nawigacja główna">
       <span class="topbar__separator topbar__separator--mobile-start" aria-hidden="true"></span>
       <a href="#realizacje" data-mobile-label="Realizacje">Realizacje</a>
@@ -69,7 +85,7 @@
       </span>
     </nav>
     <a class="topbar__cta" href="#kontakt">Umów konsultację</a>
-    <button class="topbar__menu" id="navToggleMobile" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span></button>
+    <button class="topbar__menu" id="navToggleMobile" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
   <main>
@@ -209,6 +225,12 @@
           <p>Apartament na Bulwarach Książęcych we Wrocławiu - jasne, harmonijne wnętrze bogate w tekstury i naturalne materiały.</p>
           <span class="press-card__action">Otwórz publikację</span>
         </a>
+
+        <a class="press-card press-card--text press-card--elle" href="https://decoration.elle.pl/wnetrza/zamieszkali-w-nowoczesnej-stodole-tak-wyglada-dom-w-ktorym-kroluje-jasne-drewno-i-styl-japandi/" target="_blank" rel="noreferrer" aria-label="ELLE Decoration: nowoczesna stodoła w stylu japandi">
+          <h3>ELLE Decoration</h3>
+          <p>Nowoczesna stodoła w stylu japandi, w której jasne drewno i naturalne materiały tworzą spokojną przestrzeń dla rodziny.</p>
+          <span class="press-card__action">Otwórz publikację</span>
+        </a>
       </div>
     </section>
 
@@ -222,16 +244,55 @@
           <a href="https://www.instagram.com/lnwnetrza/" target="_blank" rel="noreferrer">Instagram</a>
           <a href="https://www.facebook.com/LNwnetrza/" target="_blank" rel="noreferrer">Facebook</a>
         </div>
+        <button class="cookie-settings-link" id="cookieSettings" type="button" aria-controls="cookieConsent">Ustawienia cookies</button>
       </div>
-      <form class="contact__form reveal" id="contactForm">
+      <form class="contact__form reveal" id="contactForm" action="send.php" method="post">
         <label>Imię i nazwisko<input name="name" autocomplete="name" required></label>
         <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
         <label>Telefon<input name="phone" autocomplete="tel"></label>
         <label>Miasto<input name="city" autocomplete="address-level2"></label>
          <label>Typ przestrzeni<select name="type"><option>Mieszkanie</option><option>Dom</option><option>Apartament</option><option>Wnętrze usługowe</option><option>Inne</option></select></label>
-        <label>Zakres współpracy<select name="scope"><option>Kompleksowy projekt wnętrz</option><option>Konsultacje projektowe</option><option>Inwentaryzacja</option><option>Nadzór nad realizacją</option><option>Home staging</option></select></label>
+        <details class="checkbox-dropdown">
+          <summary>
+            <span class="checkbox-dropdown__label">Zakres współpracy</span>
+            <span class="checkbox-dropdown__value">Wybierz zakres współpracy</span>
+          </summary>
+          <div class="checkbox-dropdown__panel">
+            <label class="checkbox-row">
+              <input type="checkbox" name="scope[]" value="Kompleksowy projekt wnętrz">
+              <span>Kompleksowy projekt wnętrz</span>
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="scope[]" value="Konsultacje projektowe">
+              <span>Konsultacje projektowe</span>
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="scope[]" value="Inwentaryzacja">
+              <span>Inwentaryzacja</span>
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="scope[]" value="Nadzór nad realizacją">
+              <span>Nadzór nad realizacją</span>
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="scope[]" value="Home staging">
+              <span>Home staging</span>
+            </label>
+          </div>
+        </details>
         <label class="full">Opisz krótko swój projekt<textarea name="message" rows="5" required></textarea></label>
-         <button class="button button--primary full" type="submit">Wyślij zapytanie o projekt</button>
+        <p class="privacy-note full">
+          Administratorem danych jest LN Architektura &amp; Wnętrza. Dane z formularza przetwarzamy w celu odpowiedzi na przesłane zapytanie.
+        </p>
+        <label class="checkbox-row checkbox-consent full">
+          <input type="checkbox" name="privacy" value="accepted" required>
+          <span>Zapoznałem/am się z informacją o przetwarzaniu danych osobowych. Dane podane w formularzu zostaną wykorzystane wyłącznie w celu obsługi zapytania.</span>
+        </label>
+        <label class="hp-field" aria-hidden="true">
+          Nie wypełniaj tego pola
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <button class="button button--primary full" type="submit">Wyślij zapytanie o projekt</button>
         <p class="form-note" id="formNote" role="status"></p>
       </form>
       <a class="contact__map reveal" href="https://www.google.com/maps/search/?api=1&query=Ksi%C4%99dza+Wincentego+Krai%C5%84skiego+16%2C+Wroc%C5%82aw" target="_blank" rel="noreferrer" aria-label="Otwórz lokalizację w Google Maps">
@@ -258,7 +319,16 @@
     </article>
   </div>
 
+  <section class="cookie-consent" id="cookieConsent" aria-label="Ustawienia analityki" hidden>
+    <p>Używamy Google Analytics do pomiaru ruchu na stronie.</p>
+    <div class="cookie-consent__actions">
+      <button class="cookie-consent__button cookie-consent__button--accept" id="cookieAccept" type="button">Akceptuję</button>
+      <button class="cookie-consent__button" id="cookieReject" type="button">Odrzucam</button>
+    </div>
+  </section>
+
   <script src="scripts/data.js?v=1" defer></script>
   <script src="scripts/main.js?v=11" defer></script>
+  <script src="scripts/analytics.js?v=2" defer></script>
 </body>
 </html>
