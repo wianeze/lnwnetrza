@@ -388,7 +388,7 @@
   .hero__title > span:nth-child(2),
   .hero__title > span:last-child {
     grid-row: 2 !important;
-    font-size: .54em !important;
+    font-size: .62em !important;
     line-height: 1.05 !important;
     letter-spacing: -.025em !important;
     white-space: nowrap !important;
